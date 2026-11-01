@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThinkMart - Register</title>
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+
+<body class="login-body">
+
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">☾</button>
+
+        <div class="login-box register-box">
+
+            <h1>Think<span>Mart</span></h1>
+            <p class="subtitle">Create Your Account</p>
+
+            <h2>Register</h2>
+
+            <form id="register-form">
+
+                <label for="register-name">Full Name</label>
+                <input id="register-name" name="fullName" type="text" placeholder="Enter your name" maxlength="100" required>
+
+                <label for="register-email">Email</label>
+                <input id="register-email" name="email" type="email" placeholder="Enter your email" required>
+
+                <label for="register-phone">Phone Number</label>
+                <input id="register-phone" name="phone" type="tel" placeholder="Enter your phone number" maxlength="30" required>
+
+                <label for="register-password">Password</label>
+                <input id="register-password" name="password" type="password" placeholder="Create a password" minlength="8" maxlength="72" required>
+
+                <label for="register-confirm-password">Confirm Password</label>
+                <input id="register-confirm-password" name="confirmPassword" type="password" placeholder="Confirm password" minlength="8" maxlength="72" required>
+
+                <button type="submit" class="main-btn">
+                    Create Account
+                </button>
+                <p id="form-message" class="form-message" role="status" aria-live="polite"></p>
+
+            </form>
+
+            <p class="account-text">
+                Already have an account?
+                <a href="index.html">Login</a>
+            </p>
+
+        </div>
+
+    </div>
+
+    <script>
+        const toggle = document.querySelector('.theme-toggle');
+        const body = document.body;
+        const savedTheme = localStorage.getItem('theme');
+        const initialDark = savedTheme ? savedTheme === 'dark' : false;
+
+        body.classList.toggle('dark-mode', initialDark);
+        if (toggle) {
+            toggle.textContent = initialDark ? '☀' : '☾';
+            toggle.addEventListener('click', () => {
+                const isDark = body.classList.toggle('dark-mode');
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+                toggle.textContent = isDark ? '☀' : '☾';
+            });
+        }
+    </script>
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>

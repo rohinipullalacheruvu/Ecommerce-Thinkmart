@@ -1,0 +1,18 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run ThinkMart Spring Boot backend",
+			"type": "shell",
+			"command": ".\\backend\\mvnw.cmd",
+			"args": [
+				"-f",
+				"backend\\pom.xml",
+				"spring-boot:run"
+			],
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		}
+	]
+}

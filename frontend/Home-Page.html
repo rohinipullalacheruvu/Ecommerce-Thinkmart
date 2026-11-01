@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThinkMart - Home</title>
+    <link rel="stylesheet" href="styles/home.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Think<span>Mart</span></div>
+
+        <ul class="nav-links">
+            <li><a href="Home-Page.html" class="active">Home</a></li>
+            <li><a href="Products.html">Products</a></li>
+            <li><a href="Cart.html">Cart</a></li>
+            <li><a href="About.html">About Us</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+            <li><a href="index.html" data-logout>Logout</a></li>
+        </ul>
+
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode">☾</button>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <p class="small-heading">SMART SHOPPING</p>
+            <h1>Shop smarter.<br> Live better.</h1>
+            <p>
+                Discover the latest gadgets, everyday essentials, and premium products
+                all in one place at unbeatable prices.
+            </p>
+            <div class="hero-actions">
+                <a href="Products.html" class="shop-btn">Shop Now</a>
+                <a href="About.html" class="secondary-btn">Learn More</a>
+            </div>
+        </div>
+
+        <div class="hero-image-wrap">
+            <div class="hero-badge">New Arrivals</div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=80" alt="Shopping" />
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const toggle = document.querySelector('.theme-toggle');
+        const body = document.body;
+        const savedTheme = localStorage.getItem('theme');
+        const initialDark = savedTheme ? savedTheme === 'dark' : false;
+
+        body.classList.toggle('dark-mode', initialDark);
+        if (toggle) {
+            toggle.textContent = initialDark ? '☀' : '☾';
+            toggle.addEventListener('click', () => {
+                const isDark = body.classList.toggle('dark-mode');
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+                toggle.textContent = isDark ? '☀' : '☾';
+            });
+        }
+    </script>
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>

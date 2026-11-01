@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f8f7ff;
+    color: #222;
+    line-height: 1.6;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+    background: #0f172a;
+    color: #e2e8f0;
+}
+
+body.dark-mode .navbar,
+body.dark-mode .team-card,
+body.dark-mode .trust-card,
+body.dark-mode .about-image,
+body.dark-mode .mission-section,
+body.dark-mode .team-section,
+body.dark-mode .trust-section {
+    background: #111827;
+    color: #e2e8f0;
+    border-color: rgba(148, 163, 184, 0.2);
+}
+
+body.dark-mode .nav-links a,
+body.dark-mode .logo,
+body.dark-mode .about-content h2,
+body.dark-mode .section-title,
+body.dark-mode .team-card h3,
+body.dark-mode .trust-card h3,
+body.dark-mode .about-content p,
+body.dark-mode .mission-section p,
+body.dark-mode .team-card p,
+body.dark-mode .trust-card p {
+    color: #e2e8f0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.navbar {
+    width: 100%;
+    height: 75px;
+    padding: 0 7%;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 700;
+    color: #222;
+}
+
+.logo span {
+    color: #6c4df6;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    color: #444;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #6c4df6;
+    font-weight: 600;
+}
+
+.theme-toggle {
+    border: none;
+    background: linear-gradient(135deg, #6c4df6, #8b72ff);
+    color: #fff;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    box-shadow: 0 8px 20px rgba(108, 77, 246, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: rotate(18deg) scale(1.05);
+}
+
+.page-header {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #6c4df6, #8b72ff);
+    color: #ffffff;
+}
+
+.page-header h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.page-header p {
+    font-size: 15px;
+    color: #eeeaff;
+}
+
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 70px 7%;
+    background: #ffffff;
+}
+
+.about-content {
+    flex: 1;
+}
+
+.about-content h2,
+.section-title {
+    font-size: 32px;
+    margin-bottom: 18px;
+    color: #222;
+}
+
+.about-content p {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 250px;
+    font-size: 140px;
+    background: linear-gradient(135deg, #f3edff, #eae3ff);
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(108, 77, 246, 0.12);
+}
+
+.mission-section,
+.team-section,
+.trust-section {
+    padding: 70px 7%;
+    background: #faf9ff;
+}
+
+.mission-section p {
+    max-width: 900px;
+    color: #555;
+    font-size: 16px;
+    line-height: 1.8;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.team-container,
+.trust-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.team-card,
+.trust-card {
+    background: #fff;
+    border-radius: 18px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+    transition: 0.3s ease;
+}
+
+.team-card:hover,
+.trust-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.10);
+}
+
+.team-icon,
+.trust-card span {
+    font-size: 42px;
+    margin-bottom: 12px;
+    display: inline-block;
+}
+
+.team-card h3,
+.trust-card h3 {
+    font-size: 22px;
+    margin-bottom: 8px;
+    color: #222;
+}
+
+.team-card p,
+.trust-card p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.trust-container {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+footer {
+    background: #1a1a1a;
+    color: #fff;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.footer-logo {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.footer-logo span {
+    color: #9d8cff;
+}
+
+footer p {
+    font-size: 14px;
+    color: #d4d4d4;
+    margin-top: 5px;
+}
+
+@media (max-width: 900px) {
+    .about-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .team-container,
+    .trust-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        height: auto;
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 18px;
+    }
+
+    .team-container,
+    .trust-container {
+        grid-template-columns: 1fr;
+    }
+}

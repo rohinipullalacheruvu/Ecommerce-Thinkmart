@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThinkMart - Contact Us</title>
+    <link rel="stylesheet" href="styles/Contact.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            Think<span>Mart</span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="Home-Page.html">Home</a></li>
+            <li><a href="Products.html">Products</a></li>
+            <li><a href="Cart.html">Cart</a></li>
+            <li><a href="About.html">About Us</a></li>
+            <li><a href="Contact.html" class="active">Contact</a></li>
+            <li><a href="index.html" data-logout>Logout</a></li>
+        </ul>
+
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode">☾</button>
+    </nav>
+
+
+    <!-- Header -->
+
+    <section class="page-header">
+
+        <h1>Contact Us</h1>
+
+        <p>
+            We would love to hear from you.
+        </p>
+
+    </section>
+
+
+    <!-- Contact Section -->
+
+    <section class="contact-section">
+
+        <!-- Contact Information -->
+
+        <div class="contact-info">
+
+            <h2>Get In Touch</h2>
+
+            <p>
+                Have a question or need help?
+                Contact our team and we will be happy to assist you.
+            </p>
+
+            <div class="contact-detail">
+
+                <span>📍</span>
+
+                <div>
+                    <h3>Address</h3>
+                    <p>Guntur, Andhra Pradesh, India</p>
+                </div>
+
+            </div>
+
+
+            <div class="contact-detail">
+
+                <span>📞</span>
+
+                <div>
+                    <h3>Phone</h3>
+                    <p>+91 98765 43210</p>
+                </div>
+
+            </div>
+
+
+            <div class="contact-detail">
+
+                <span>📧</span>
+
+                <div>
+                    <h3>Email</h3>
+                    <p>support@thinkmart.com</p>
+                </div>
+
+            </div>
+
+
+            <h3>Follow Us</h3>
+
+            <div class="social-links">
+
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+                <a href="#">LinkedIn</a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Contact Form -->
+
+        <div class="contact-form">
+
+            <h2>Send Us a Message</h2>
+
+            <form>
+
+                <label>Name</label>
+
+                <input
+                    type="text"
+                    placeholder="Enter your name"
+                    required
+                >
+
+
+                <label>Email</label>
+
+                <input
+                    type="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+
+                <label>Message</label>
+
+                <textarea
+                    rows="6"
+                    placeholder="Write your message..."
+                    required
+                ></textarea>
+
+
+                <button
+                    type="submit"
+                    class="main-btn"
+                >
+                    Send Message
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        <div class="footer-logo">
+            Think<span>Mart</span>
+        </div>
+
+        <p>Your Smart Shopping Destination</p>
+
+        <p>© 2026 ThinkMart. All Rights Reserved.</p>
+
+    </footer>
+
+    <script>
+        const toggle = document.querySelector('.theme-toggle');
+        const body = document.body;
+        const savedTheme = localStorage.getItem('theme');
+        const initialDark = savedTheme ? savedTheme === 'dark' : false;
+
+        body.classList.toggle('dark-mode', initialDark);
+        if (toggle) {
+            toggle.textContent = initialDark ? '☀' : '☾';
+            toggle.addEventListener('click', () => {
+                const isDark = body.classList.toggle('dark-mode');
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+                toggle.textContent = isDark ? '☀' : '☾';
+            });
+        }
+    </script>
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>

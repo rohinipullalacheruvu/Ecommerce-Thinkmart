@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThinkMart - Login</title>
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+
+<body class="login-body">
+
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">☾</button>
+
+        <div class="login-box">
+            <h1>Think<span>Mart</span></h1>
+            <p class="subtitle">Your Smart Shopping Destination</p>
+
+            <h2>Login</h2>
+
+            <form id="login-form">
+                <label for="login-email">Email</label>
+                <input id="login-email" name="email" type="email" placeholder="Enter your email" required>
+
+                <label for="login-password">Password</label>
+                <input id="login-password" name="password" type="password" placeholder="Enter your password" required>
+
+                <button type="submit" class="main-btn">Login</button>
+                <p id="form-message" class="form-message" role="status" aria-live="polite"></p>
+            </form>
+
+            <p class="account-text">
+                Don't have an account?
+                <a href="Register-Page.html">Register</a>
+            </p>
+
+            <a href="Home-Page.html" class="guest-link">
+                Continue as Guest
+            </a>
+        </div>
+
+    </div>
+
+    <script>
+        const toggle = document.querySelector('.theme-toggle');
+        const body = document.body;
+        const savedTheme = localStorage.getItem('theme');
+        const initialDark = savedTheme ? savedTheme === 'dark' : false;
+
+        body.classList.toggle('dark-mode', initialDark);
+        if (toggle) {
+            toggle.textContent = initialDark ? '☀' : '☾';
+            toggle.addEventListener('click', () => {
+                const isDark = body.classList.toggle('dark-mode');
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+                toggle.textContent = isDark ? '☀' : '☾';
+            });
+        }
+    </script>
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>
